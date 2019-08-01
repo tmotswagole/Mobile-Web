@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Title & icon -->
+    <title>Index</title>
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.jpeg" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <style>
+        body {
+            margin: 3% 5% 3% 3%;
+        }
+
+        .container {
+            position: fixed;
+            z-index: -1;
+        }
+
+        header {
+            margin-left: 5%;
+            margin-top: 15%;
+            font-size: 0.5in;
+            color: #2699fb;
+        }
+
+        .descr {
+            margin-left: 5%;
+            margin-top: 0.7%;
+            color: #2699fb;
+        }
+
+        .col-sm {
+            margin-top: 6%;
+            width: 32%;
+        }
+
+        .d-inline-block {
+            color: #2699fb;
+        }
+
+        .btn {
+            background-color: #f1f9ff;
+            color: #2699fb;
+        }
+
+        /* header */
+
+        .menu-check {
+            display: none;
+        }
+
+        .header {
+            background: #27ae60;
+            position: fixed;
+            width: 100vw;
+            top: 0;
+            left: 0;
+            padding: 0;
+            margin: 0;
+        }
+
+        .header .navigation {
+            width: 80%;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            height: 100%;
+        }
+
+        .header .navigation .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .header .navigation .logo img {
+            height: 60px;
+            width: auto;
+            margin-right: 20px;
+        }
+
+        .header .navigation nav {
+            margin-right: 20px;
+            display: flex;
+            width: 100%;
+            height: 70px;
+            transition: 0.2s;
+        }
+
+        .header .navigation nav a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #f1f1f1;
+            text-decoration: none;
+            flex: 1;
+        }
+
+        .header .navigation nav a:hover {
+            background: #2ecc71;
+        }
+
+        .menu-button {
+            display: none;
+        }
+
+        @media screen and (max-width: 600px) {
+            .header {
+                height: auto;
+            }
+
+            .header .logo {
+                width: 100vw !important;
+                display: flex;
+                justify-content: center;
+                margin-top: 2%;
+                margin-bottom: 2%;
+            }
+
+            nav {
+                background: #f1f1f1;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 60vw !important;
+                height: 100vh !important;
+                flex-direction: column;
+                transform: translate(-60vw);
+                opacity: 0;
+            }
+
+            nav a {
+                color: #333 !important;
+            }
+
+            nav a:hover {
+                color: #f1f1f1 !important;
+            }
+
+            .menu-button {
+                position: fixed;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                top: 0;
+                right: 0;
+                height: 70px;
+                width: 70px;
+                z-index: 10;
+            }
+
+            .menu-button span {
+                height: 3px;
+                width: 30px;
+                background: #f1f1f1;
+                display: block;
+                margin-bottom: 7px;
+                border-radius: 10px;
+                transition: 0.2s;
+            }
+
+            .menu-check:checked~nav {
+                transform: translate(0vw);
+                opacity: 1;
+            }
+
+            .menu-check:checked~label .menu-button span:nth-child(1) {
+                transform: rotate(45deg);
+                margin-top: 15;
+            }
+
+            .menu-check:checked~label .menu-button span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .menu-check:checked~label .menu-button span:nth-child(3) {
+                transform: rotate(-45deg);
+                margin-top: -20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="header">
+        <div class="navigation">
+            <div class="logo">
+                <img src="favicon.jpeg" alt="logo.png" style="height:50px;width:50px;" />
+            </div>
+            <input class="menu-check" name="menu-check" id="menu-check" type="checkbox" />
+            <label for="menu-check">
+                <div class="menu-button">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </label>
+            <nav>
+                <a href="">Home</a>
+                <a href="">About</a>
+                <a href="">Services</a>
+                <a href="">Contact</a>
+            </nav>
+        </div>
+    </section>
+
+    <header>Category</header>
+
+    <div class="descr">Select which category your issue relates with.</div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+                <span class="d-inline-block" tabindex="0" data-toggle="tooltip"
+                    title="If there are any crop related issues, click this">
+                    <form action="/help-choice.html?problem=crop" method="GET">
+                        <button class="btn btn-primary" style="pointer-events: none;" type="button">Crop</button>
+                    </form>
+                </span>
+            </div>
+            <div class="col-sm">
+                <span class="d-inline-block" tabindex="0" data-toggle="tooltip"
+                    title="If there are any soil related issues, click this">
+                    <form action="/help-choice.html?problem=soil" method="GET">
+                        <button class="btn btn-primary" style="pointer-events: none;" type="button">Soil</button>
+                    </form>
+                </span>
+            </div>
+            <div class="col-sm">
+                <span class="d-inline-block" tabindex="0" data-toggle="tooltip"
+                    title="If there are any water related issues, click this">
+                    <form action="/help-choice.html?problem=water" method="GET">
+                        <button class="btn btn-primary" style="pointer-events: none;" type="button">Water</button>
+                    </form>
+                </span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                <span class="d-inline-block" tabindex="0" data-toggle="tooltip"
+                    title="If there are any disease related issues, click this">
+                    <form action="/help-choice.html?problem=disease" method="GET">
+                        <button class="btn btn-primary" style="pointer-events: none;" type="button">Disease</button>
+                    </form>
+                </span>
+            </div>
+            <div class="col-sm">
+                <span class="d-inline-block" tabindex="0" data-toggle="tooltip"
+                    title="If there are any issues related the market, click this">
+                    <form action="/help-choice.html?problem=market" method="GET">
+                        <button class="btn btn-primary" style="pointer-events: none;" type="button">Market</button>
+                    </form>
+                </span>
+            </div>
+            <div class="col-sm">
+                <span class="d-inline-block" tabindex="0" data-toggle="tooltip"
+                    title="If there are any other issues not stated, click this">
+                    <form action="/help-choice.html?problem=other" method="GET">
+                        <button class="btn btn-primary" style="pointer-events: none;" type="button">Other</button>
+                    </form>
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
